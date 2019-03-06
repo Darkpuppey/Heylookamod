@@ -1,0 +1,3 @@
+author = Darkpuppey
+version = 0.1
+displayName = Darkpuppey's Journey in Code
