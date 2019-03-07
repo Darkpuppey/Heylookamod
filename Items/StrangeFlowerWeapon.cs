@@ -21,7 +21,7 @@ namespace Heylookamod.Items
         }
         public override void SetDefaults()
         {
-            item.damage = 1;
+            item.damage = 100;
             item.width = 32;
             item.height = 42;
             item.useTime = 3;
@@ -33,8 +33,8 @@ namespace Heylookamod.Items
             item.rare = 2;
             item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Custom, "Sounds/FloweyHurt");
             item.autoReuse = true;
-            item.shoot = mod.ProjectileType("Pellet");
-            item.shootSpeed = 10f;
+            item.shoot = mod.ProjectileType("PelletHoming");
+            item.shootSpeed = 2f;
         }
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
@@ -51,7 +51,7 @@ namespace Heylookamod.Items
         {
             if(NPC.downedPlantBoss)
             {
-
+                Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("Pellet"), 10, knockBack, player.whoAmI);
             }
             else
             {

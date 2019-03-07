@@ -21,8 +21,8 @@ namespace Heylookamod.Tiles
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(194, 184, 157));
-            soundType = 3;
-            dustType = 4;
+            soundType = 21;
+            dustType = 8;
             animationFrameHeight = 106;
             TileObjectData.newTile.Origin = new Point16(0, 4);
             //Can't use this since texture is vertical.
@@ -43,7 +43,7 @@ namespace Heylookamod.Tiles
         }
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("StrangeTVItem"));
+            Item.NewItem(i * 16, j * 16, 80, 96, mod.ItemType("BrokenTV"));
         }
     }
 }
