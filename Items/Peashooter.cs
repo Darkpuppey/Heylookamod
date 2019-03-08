@@ -20,15 +20,15 @@ namespace Heylookamod.Items
         public override void SetDefaults()
         {
             item.damage = 1;
+            item.crit = 10;
             item.ranged = true;
-            item.width = 44;
-            item.height = 54;
+            item.width = 28;
+            item.height = 38;
             item.useTime = 30;
             item.useAnimation = 30;
-            item.reuseDelay = 1;
             item.useStyle = 5;
             item.noMelee = true; 
-            item.knockBack = 1;
+            item.knockBack = 10;
             item.value = 10000;
             item.rare = 2;
             item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Custom, "Sounds/FloweyHurt");
@@ -54,6 +54,9 @@ namespace Heylookamod.Items
             ModRecipe recipe = new ModRecipe(mod);
 
             recipe.SetResult(this);
+            recipe.AddIngredient(ItemID.DirtBlock,20);
+            recipe.AddIngredient(ItemID.Acorn);
+            recipe.AddIngredient(ItemID.Sunflower,2);
             recipe.AddRecipe();
         }
         public override Vector2? HoldoutOffset()

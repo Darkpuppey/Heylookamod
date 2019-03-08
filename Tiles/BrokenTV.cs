@@ -17,6 +17,7 @@ namespace Heylookamod.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
             TileObjectData.newTile.Height = 6;
             TileObjectData.newTile.Width = 5;
+            TileObjectData.newTile.Origin = new Point16(2, 5);
             TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16};
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.addTile(Type);
@@ -24,7 +25,6 @@ namespace Heylookamod.Tiles
             soundType = 21;
             dustType = 8;
             animationFrameHeight = 106;
-            TileObjectData.newTile.Origin = new Point16(0, 4);
             //Can't use this since texture is vertical.
             //animationFrameHeight = 56;
         }

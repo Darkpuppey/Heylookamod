@@ -1,0 +1,13 @@
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.csprojAssemblyReference.cache
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.csproj.CoreCompileInputs.cache
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\ClassLibrary.dll
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\ClassLibrary.pdb
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\BaseMod.dll
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Microsoft.Xna.Framework.dll
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Microsoft.Xna.Framework.Xact.dll
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Terraria.exe
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.csproj.CopyComplete
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\ClassLibrary.dll
+C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\ClassLibrary.pdb

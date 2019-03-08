@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Heylookamod.Tiles
@@ -10,9 +11,11 @@ namespace Heylookamod.Tiles
 		{
 			Main.tileSolid[Type] = true;
 			Main.tileMergeDirt[Type] = true;
-            soundType = 21;
+            soundType = 6;
+            dustType = 2;
+            minPick = 9999999;
             drop = mod.ItemType("Crystal");
-			AddMapEntry(new Color(200, 200, 200));
+			AddMapEntry(new Color(177, 255, 43));
 		}
 	}
 }

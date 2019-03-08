@@ -1,3 +1,6 @@
 author = Darkpuppey
-version = 0.11
+version = 0.15
 displayName = Darkpuppey's Journey in Code
+homepage = https://discord.gg/NwWUcSk
+modReferences = BaseMod
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*

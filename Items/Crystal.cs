@@ -10,7 +10,7 @@ namespace Heylookamod.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("It feels cold.");
+			Tooltip.SetDefault("You feel vines [c/ffa0a0:crawling] up your arm...");
 		}
 
 		public override void SetDefaults()

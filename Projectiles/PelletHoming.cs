@@ -51,7 +51,7 @@ namespace Heylookamod.Projectiles
             bool target = false;
             for (int k = 0; k < 200; k++)
             {
-                if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5)
+                if (Main.npc[k].active && !Main.npc[k].dontTakeDamage && !Main.npc[k].friendly && Main.npc[k].lifeMax > 5 && !Main.npc[k].immortal)
                 {
                     Vector2 newMove = Main.npc[k].Center - projectile.Center;
                     float distanceTo = (float)Math.Sqrt(newMove.X * newMove.X + newMove.Y * newMove.Y);
@@ -70,13 +70,13 @@ namespace Heylookamod.Projectiles
                 AdjustMagnitude(ref projectile.velocity);
             }
         }
-            private void AdjustMagnitude(ref Vector2 vector)
+        private void AdjustMagnitude(ref Vector2 vector)
+        {
+            float magnitude = (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y);
+            if (magnitude > 6f)
             {
-                float magnitude = (float)Math.Sqrt(vector.X * vector.X + vector.Y * vector.Y);
-                if (magnitude > 6f)
-                {
-                    vector *= 6f / magnitude;
-                }
+                vector *= 6f / magnitude;
             }
         }
     }
+}

@@ -21,7 +21,7 @@ namespace Heylookamod.Items
         }
         public override void SetDefaults()
         {
-            item.damage = 100;
+            item.damage = 75;
             item.width = 32;
             item.height = 42;
             item.useTime = 3;
