@@ -10,51 +10,53 @@ using Terraria.ModLoader.IO;
 
 namespace Heylookamod.Items
 {
-    public class Peashooter : ModItem
+    public class PetalPusher : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Peashooter");
-            Tooltip.SetDefault("This one had a bit too much sunlight.");
+            DisplayName.SetDefault("Petal Pusher");
+            Tooltip.SetDefault("You'll be pushing a lot more than a few petals with this.");
         }
         public override void SetDefaults()
         {
-            item.damage = 1;
+            item.damage = 15;
             item.crit = 10;
             item.ranged = true;
-            item.width = 28;
-            item.height = 38;
-            item.useTime = 30;
-            item.useAnimation = 30;
+            item.width = 38;
+            item.height = 46;
+            item.useTime = 15;
+            item.useAnimation = 15;
+            item.reuseDelay = 1;
             item.useStyle = 5;
             item.noMelee = true; 
             item.knockBack = 10;
             item.value = 10000;
             item.rare = 2;
-            item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Custom, "Sounds/FloweyHurt");
-            item.autoReuse = false;
-            item.shoot = mod.ProjectileType("Pea");
-            item.shootSpeed = 10f;
+            item.UseSound = new Terraria.Audio.LegacySoundStyle(SoundID.Grass, 0);
+            item.autoReuse = true;
+            item.shoot = mod.ProjectileType("Petal");
+            item.shootSpeed = 20f;
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            int numberProjectiles = 5 + Main.rand.Next(7); // 4 or 5 shots
+            int numberProjectiles = 4 + Main.rand.Next(7); // 4 or 5 shots
             for (int i = 0; i < numberProjectiles; i++)
             {
-                Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15)); // 30 degree spread.
+                Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(30)); // 30 degree spread.
                                                                                                                 // If you want to randomize the speed to stagger the projectiles
                 float scale = 1f - (Main.rand.NextFloat() * .10f);
-                perturbedSpeed = perturbedSpeed * scale; 
+                perturbedSpeed = perturbedSpeed * scale;
                 Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
             }
-            return false; // return false because we don't want tmodloader to shoot projectile
+            return false;
         }
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.DirtBlock,20);
-            recipe.AddIngredient(ItemID.Acorn);
-            recipe.AddIngredient(ItemID.Sunflower,2);
+            recipe.AddIngredient(ItemID.Bone,20);
+            recipe.AddIngredient(ItemID.GrassSeeds,100);
+            recipe.AddIngredient(null, "Peashooter");
+            recipe.AddIngredient(ItemID.FallenStar, 2);
             recipe.AddTile(TileID.ClayPot);
 
             recipe.SetResult(this);

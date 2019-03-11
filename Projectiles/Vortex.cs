@@ -14,8 +14,10 @@ namespace Heylookamod.Projectiles
 
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.BabySkeletronHead);
-			aiType = ProjectileID.BabySkeletronHead;
+            projectile.CloneDefaults(ProjectileID.BabySkeletronHead);
+            aiType = ProjectileID.BabySkeletronHead;
+            projectile.width = 28;               //The width of projectile hitbox
+            projectile.height = 28;              //The height of projectile hitbox
 		}
 
 		public override bool PreAI()
@@ -39,7 +41,11 @@ namespace Heylookamod.Projectiles
             if (Main.rand.Next(3) == 0)
             {
                 Dust.NewDust(projectile.position + projectile.velocity, 10, 10, 274, 0, projectile.velocity.Y * -0.9f);
+                Dust.NewDust(projectile.position + projectile.velocity, 10, 10, 274, 0, projectile.velocity.Y * -0.9f);
             }
+
+            projectile.rotation += projectile.velocity.X * 0.05f;
+            projectile.rotation += 0.01f;
         }
 	}
 }

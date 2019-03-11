@@ -10,13 +10,14 @@ namespace Heylookamod.Items
 		{
 			// DisplayName and Tooltip are automatically set from the .lang files, but below is how it is done normally.
 			 DisplayName.SetDefault("Orb of Gratitude");
-			Tooltip.SetDefault("Summons a group of strange and interesting entities to keep you company!");
+			Tooltip.SetDefault("Summons a group of strange and interesting entities to keep you company and assist you!");
 		}
 
 		public override void SetDefaults()
 		{
 			item.CloneDefaults(ItemID.ZephyrFish);
-			item.shoot = mod.ProjectileType("Orange");
+            item.damage = 30;
+            item.shoot = mod.ProjectileType("Orange");
             item.shoot = mod.ProjectileType("Vortex");
             item.shoot = mod.ProjectileType("ClownCopter");
             item.shoot = mod.ProjectileType("RescueBoat");

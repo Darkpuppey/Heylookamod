@@ -32,6 +32,7 @@ namespace Heylookamod.Projectiles
         }
         public override void AI()
         {
+            BaseMod.BaseAI.Look(projectile, 0);
             projectile.velocity *= 1.025f;
             if (++projectile.frameCounter >= 5)
             {

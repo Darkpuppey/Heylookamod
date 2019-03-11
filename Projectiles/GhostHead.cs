@@ -4,20 +4,21 @@ using Terraria.ModLoader;
 
 namespace Heylookamod.Projectiles
 {
-	public class RescueBoat : ModProjectile
+	public class GhostHead : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			 DisplayName.SetDefault("RescueBoat"); // Automatic from .lang files
+			 DisplayName.SetDefault("GhostHead"); // Automatic from .lang files
 			Main.projPet[projectile.type] = true;
 		}
 
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.BabyHornet);
-			aiType = ProjectileID.BabyHornet;
-            projectile.width = 38;
-            projectile.height = 38;
+			projectile.CloneDefaults(ProjectileID.StardustDragon1);
+			aiType = ProjectileID.StardustDragon1;
+            projectile.width = 30;
+            projectile.height = 24;
+            projectile.alpha = 0;
         }
 
 		public override bool PreAI()

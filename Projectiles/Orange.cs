@@ -16,7 +16,9 @@ namespace Heylookamod.Projectiles
 		{
 			projectile.CloneDefaults(ProjectileID.DD2PetGato);
 			aiType = ProjectileID.DD2PetGato;
-		}
+            projectile.width = 32;
+            projectile.height = 32;
+        }
 
 		public override bool PreAI()
 		{
@@ -38,7 +40,7 @@ namespace Heylookamod.Projectiles
 			}
             if (Main.rand.Next(3) == 0)
             {
-                Dust.NewDust(projectile.position + projectile.velocity, 10, 10, mod.DustType("OrangeResidue"), 0, projectile.velocity.Y * 0.9f);
+                Dust.NewDust(projectile.position + projectile.velocity, 5, 5, mod.DustType("OrangeResidue"), 0, projectile.velocity.Y * 0.9f);
             }
         }
 	}

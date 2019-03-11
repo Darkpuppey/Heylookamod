@@ -30,7 +30,7 @@ namespace Heylookamod.Items
             item.noMelee = true;
             item.knockBack = 2;
             item.value = 10000;
-            item.rare = 2;
+            item.rare = 8;
             item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Custom, "Sounds/FloweyHurt");
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("PelletHoming");

@@ -6,6 +6,8 @@ namespace Heylookamod.Projectiles
 {
     public class Kirby : ModProjectile
     {
+        private int backFrames = 0;
+
         public override void SetStaticDefaults()
         {
             Main.projFrames[projectile.type] = 8;
@@ -45,6 +47,12 @@ namespace Heylookamod.Projectiles
                 if (++projectile.frame >= 8)
                 {
                     projectile.frame = 0;
+                    backFrames = 0;
+                }
+                if (projectile.frame == 6 && backFrames < 5)
+                {
+                    backFrames++;
+                    projectile.frame--;
                 }
             }
         }

@@ -30,6 +30,7 @@ namespace Heylookamod.Projectiles
         }
          public override void AI()
         {
+            BaseMod.BaseAI.Look(projectile, 0);
             projectile.velocity *= 1.05f;
             projectile.penetrate--;
             if (projectile.penetrate <= 2)
