@@ -2,10 +2,18 @@ using Terraria.ModLoader;
 
 namespace Heylookamod
 {
-	class Heylookamod : Mod
+	public class Heylookamod : Mod
 	{
-		public Heylookamod()
-		{
-		}
-	}
+        public static Heylookamod instance;
+
+        public override void Load()
+        {
+            instance = this;
+        }
+
+        public override void Unload()
+        {
+            instance = null;
+        }
+    }
 }

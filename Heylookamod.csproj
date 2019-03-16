@@ -30,9 +30,6 @@
     <RootNamespace>Heylookamod</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BaseMod">
-      <HintPath>.\BaseMod.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -50,6 +47,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\Microsoft.Xna.Framework.Xact.dll</HintPath>
     </Reference>
+    <Reference Include="ReLogic">
+      <HintPath>.\ReLogic.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -61,6 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BaseMod\NPCs\ParentNPC.png" />
+    <Content Include="BaseMod\Projectiles\ParentProjectile.png" />
     <Content Include="build.txt" />
     <Content Include="description.txt" />
     <Content Include="icon-Borderless.png" />
@@ -87,6 +89,23 @@
     <Content Include="WorldGeneration\FloweyCaveWall.png" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseMod\Base\BaseAI.cs" />
+    <Compile Include="BaseMod\Base\BaseConstants.cs" />
+    <Compile Include="BaseMod\Base\BaseDrawing.cs" />
+    <Compile Include="BaseMod\Base\BaseInvasion.cs" />
+    <Compile Include="BaseMod\Base\BaseNet.cs" />
+    <Compile Include="BaseMod\Base\BasePlayer.cs" />
+    <Compile Include="BaseMod\Base\BaseTile.cs" />
+    <Compile Include="BaseMod\Base\BaseUseStyle.cs" />
+    <Compile Include="BaseMod\Base\BaseUtility.cs" />
+    <Compile Include="BaseMod\Base\BaseWorldGen.cs" />
+    <Compile Include="BaseMod\Base\BaseWorldGenTex.cs" />
+    <Compile Include="BaseMod\MNet.cs" />
+    <Compile Include="BaseMod\MNPC.cs" />
+    <Compile Include="BaseMod\MPlayer.cs" />
+    <Compile Include="BaseMod\MProjectile.cs" />
+    <Compile Include="BaseMod\NPCs\ParentNPC.cs" />
+    <Compile Include="BaseMod\Projectiles\ParentProjectile.cs" />
     <Compile Include="Heylookamod.cs" />
     <Compile Include="Items\BrokenTV.cs" />
     <Compile Include="Items\Crystal.cs" />

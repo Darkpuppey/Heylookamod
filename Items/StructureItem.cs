@@ -1,16 +1,12 @@
-using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Heylookamod.Tiles;
-using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
-using Terraria.ModLoader;
 using BaseMod;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace Heylookamod.Items
 {
-	public class StructureItem : ModItem
+    public class StructureItem : ModItem
 	{
         public override void SetStaticDefaults()
         {
@@ -50,14 +46,18 @@ namespace Heylookamod.Items
 
             //I have set all the values to (0, 0, 0) so you can enter them yourself.
 
-            Dictionary<Color, int> colorToTile = new Dictionary<Color, int>();
-            colorToTile[new Color(0, 0, 255)] = mod.TileType("Crystal");
-            colorToTile[new Color(255, 0, 0)] = -2; //-2 Deletes the block of the color it's assigned to. Useful for clearing out areas.
-            colorToTile[Color.Black] = -1; //-1 Will not touch the blocks in the coordinates it's assigned to. This is good for leaving natural generation around a structure. Leaving this as black is a good Idea
+            Dictionary<Color, int> colorToTile = new Dictionary<Color, int>
+            {
+                [new Color(0, 0, 255)] = mod.TileType("Crystal"),
+                [new Color(255, 0, 0)] = -2, //-2 Deletes the block of the color it's assigned to. Useful for clearing out areas.
+                [Color.Black] = -1 //-1 Will not touch the blocks in the coordinates it's assigned to. This is good for leaving natural generation around a structure. Leaving this as black is a good Idea
+            };
 
-            Dictionary<Color, int> colorToWall = new Dictionary<Color, int>();
-            colorToWall[new Color(0, 0, 255)] = mod.WallType("OvergrowthWall");
-            colorToWall[Color.Black] = -1;
+            Dictionary<Color, int> colorToWall = new Dictionary<Color, int>
+            {
+                [new Color(0, 0, 255)] = mod.WallType("OvergrowthWall"),
+                [Color.Black] = -1
+            };
             colorToTile[new Color(255, 0, 0)] = -2;
 
             //Tile Texture, colorToTile, Wall Texture, colorToWall, Liquid Texture
