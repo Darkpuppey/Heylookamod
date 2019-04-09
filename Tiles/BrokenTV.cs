@@ -8,17 +8,17 @@ using Terraria.ObjectData;
 
 namespace Heylookamod.Tiles
 {
-	class BrokenTV : ModTile
-	{
-		public override void SetDefaults()
-		{
-			Main.tileFrameImportant[Type] = true;
-			Main.tileLavaDeath[Type] = false;
+    class BrokenTV : ModTile
+    {
+        public override void SetDefaults()
+        {
+            Main.tileFrameImportant[Type] = true;
+            Main.tileLavaDeath[Type] = false;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
             TileObjectData.newTile.Height = 6;
             TileObjectData.newTile.Width = 5;
             TileObjectData.newTile.Origin = new Point16(2, 5);
-            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16};
+            TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16, 16, 16, 16, 16 };
             TileObjectData.newTile.CoordinateWidth = 16;
             TileObjectData.addTile(Type);
             AddMapEntry(new Color(194, 184, 157));

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using BaseMod;
 
 namespace Heylookamod.Projectiles
 {
@@ -27,9 +28,9 @@ namespace Heylookamod.Projectiles
             projectile.tileCollide = true;          //Can the projectile collide with tiles?
             projectile.extraUpdates = 1;            //Set to above 0 if you want the projectile to update multiple time in a frame
         }
-         public override void AI()
+        public override void AI()
         {
-            BaseMod.BaseAI.Look(projectile, 0);
+            BaseAI.Look(projectile, 0);
             projectile.velocity *= 0.95f;
             projectile.alpha += 5;
             if (projectile.alpha >= 254)

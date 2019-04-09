@@ -8,16 +8,15 @@ using Terraria.ObjectData;
 
 namespace Heylookamod.Tiles
 {
-	class StrangeFlower : ModTile
-	{
-		public override void SetDefaults()
-		{
-			Main.tileFrameImportant[Type] = true;
-			Main.tileLavaDeath[Type] = true;
+    class StrangeFlower : ModTile
+    {
+        public override void SetDefaults()
+        {
+            Main.tileFrameImportant[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
             TileObjectData.addTile(Type);
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Strange Flower");
+            ModTranslation name = CreateMapEntryName();
+            name.SetDefault("Strange Flower");
             soundType = 6;
             dustType = 2;
             AddMapEntry(new Color(244, 217, 66), name);
@@ -39,8 +38,8 @@ namespace Heylookamod.Tiles
             }
         }
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		{
-			Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("StrangeFlowerWeapon"));
-		}
-	}
+        {
+            Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("StrangeFlowerWeapon"));
+        }
+    }
 }

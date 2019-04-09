@@ -28,7 +28,7 @@ namespace Heylookamod.Projectiles
             projectile.tileCollide = true;          //Can the projectile collide with tiles?
             projectile.extraUpdates = 1;            //Set to above 0 if you want the projectile to update multiple time in a frame
         }
-         public override void AI()
+        public override void AI()
         {
             BaseMod.BaseAI.Look(projectile, 0);
             projectile.velocity *= 1.05f;

@@ -1,5 +1,6 @@
 author = Darkpuppey
-version = 0.301
+version = 0.400
 displayName = Darkpuppey's Journey in Code
 homepage = https://discord.gg/NwWUcSk
 modReferences = BaseMod
+includePDB = false

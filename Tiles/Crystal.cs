@@ -5,8 +5,8 @@ using Terraria.ModLoader;
 
 namespace Heylookamod.Tiles
 {
-	public class Crystal : ModTile
-	{
+    public class Crystal : ModTile
+    {
         public override void SetDefaults()
         {
             Main.tileSolid[Type] = true;
@@ -17,9 +17,9 @@ namespace Heylookamod.Tiles
             drop = mod.ItemType("Crystal");
             AddMapEntry(new Color(177, 255, 43));
         }
-            public override bool CanExplode(int i, int j)
+        public override bool CanExplode(int i, int j)
         {
             return false;
-        }   
+        }
     }
 }
