@@ -10,8 +10,8 @@ using BaseMod;
 
 namespace Heylookamod.Items
 {
-	public class StructureItem : ModItem
-	{
+    public class StructureItem : ModItem
+    {
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Structure Item");
@@ -25,13 +25,13 @@ namespace Heylookamod.Items
             item.rare = 8;
             item.value = 350000;
 
-			item.useStyle = 1;
+            item.useStyle = 1;
             item.useAnimation = 45;
-            item.useTime = 45;	
+            item.useTime = 45;
         }
 
-		public override bool UseItem(Player player)
-		{
+        public override bool UseItem(Player player)
+        {
             //Your assignment to learn how to use Tex-To-Gen is to generate the structure I've provided with this tutuoral.
 
             //You have to generate the Tiles, Walls, and Liquids with the materials I specify by assigning them to colors they appear as on the texture
@@ -64,9 +64,11 @@ namespace Heylookamod.Items
 
             TexGen gen = BaseWorldGenTex.GetTexGenerator(mod.GetTexture("WorldGeneration/FloweyCave"), colorToTile, mod.GetTexture("WorldGeneration/FloweyCaveWall"), colorToWall);
 
-            Point origin = new Point((int)(player.Center.X /16f), (int)(player.Center.Y /16f));
+            Point origin = new Point((int)(player.Center.X / 16f), (int)(player.Center.Y / 16f));
+            WorldGen.PlaceObject(origin.X, origin.Y, mod.TileType<StrangeFlower>());
             gen.Generate(origin.X, origin.Y + 2, true, true);
+            Main.NewText("hey something happened");
             return true;
         }
-	}
+    }
 }

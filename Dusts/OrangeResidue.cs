@@ -2,11 +2,11 @@ using Terraria.ModLoader;
 
 namespace Heylookamod.Dusts
 {
-	public class OrangeResidue : ModDust
-	{
-		public override void SetDefaults()
-		{
-			updateType = 110;
-		}
-	}
+    public class OrangeResidue : ModDust
+    {
+        public override void SetDefaults()
+        {
+            updateType = 110;
+        }
+    }
 }

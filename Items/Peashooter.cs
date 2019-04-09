@@ -27,7 +27,7 @@ namespace Heylookamod.Items
             item.useTime = 30;
             item.useAnimation = 30;
             item.useStyle = 5;
-            item.noMelee = true; 
+            item.noMelee = true;
             item.knockBack = 10;
             item.value = 10000;
             item.rare = 2;
@@ -44,7 +44,7 @@ namespace Heylookamod.Items
                 Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15)); // 30 degree spread.
                                                                                                                 // If you want to randomize the speed to stagger the projectiles
                 float scale = 1f - (Main.rand.NextFloat() * .10f);
-                perturbedSpeed = perturbedSpeed * scale; 
+                perturbedSpeed = perturbedSpeed * scale;
                 Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
             }
             return false; // return false because we don't want tmodloader to shoot projectile
@@ -52,9 +52,9 @@ namespace Heylookamod.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.DirtBlock,20);
+            recipe.AddIngredient(ItemID.DirtBlock, 20);
             recipe.AddIngredient(ItemID.Acorn);
-            recipe.AddIngredient(ItemID.Sunflower,2);
+            recipe.AddIngredient(ItemID.Sunflower, 2);
             recipe.AddTile(TileID.ClayPot);
 
             recipe.SetResult(this);

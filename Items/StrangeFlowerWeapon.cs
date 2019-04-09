@@ -21,7 +21,7 @@ namespace Heylookamod.Items
         }
         public override void SetDefaults()
         {
-            item.damage = 75;
+            item.damage = 75; //75
             item.width = 32;
             item.height = 42;
             item.useTime = 3;
@@ -31,7 +31,7 @@ namespace Heylookamod.Items
             item.knockBack = 2;
             item.value = 10000;
             item.rare = 8;
-            item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Custom, "Sounds/FloweyHurt");
+            item.UseSound = mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/FloweyHurt");
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("PelletHoming");
             item.shootSpeed = 2f;
@@ -49,7 +49,7 @@ namespace Heylookamod.Items
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            if(NPC.downedPlantBoss)
+            if (NPC.downedPlantBoss)
             {
                 Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("Pellet"), 10, knockBack, player.whoAmI);
             }
@@ -59,13 +59,13 @@ namespace Heylookamod.Items
                 if (player.statLife <= 0 && Main.myPlayer == player.whoAmI)
                 {
                     player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " got a taste of LOVE"), 10, 0, false);
-                    Main.PlaySound(mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Custom, "Sounds/FloweyLaugh"));
+                    Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/FloweyLaugh"));
                 }
             }
-                Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
-                speedX = perturbedSpeed.X;
-                speedY = perturbedSpeed.Y;
-                return true;
+            Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(10));
+            speedX = perturbedSpeed.X;
+            speedY = perturbedSpeed.Y;
+            return true;
         }
         public override Vector2? HoldoutOffset()
         {

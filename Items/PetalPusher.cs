@@ -28,7 +28,7 @@ namespace Heylookamod.Items
             item.useAnimation = 15;
             item.reuseDelay = 1;
             item.useStyle = 5;
-            item.noMelee = true; 
+            item.noMelee = true;
             item.knockBack = 10;
             item.value = 10000;
             item.rare = 2;
@@ -53,8 +53,8 @@ namespace Heylookamod.Items
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Bone,20);
-            recipe.AddIngredient(ItemID.GrassSeeds,100);
+            recipe.AddIngredient(ItemID.Bone, 20);
+            recipe.AddIngredient(ItemID.GrassSeeds, 100);
             recipe.AddIngredient(null, "Peashooter");
             recipe.AddIngredient(ItemID.FallenStar, 2);
             recipe.AddTile(TileID.ClayPot);
