@@ -1,6 +1,6 @@
 author = Darkpuppey
-version = 0.400
+version = 0.401
 displayName = Darkpuppey's Journey in Code
-homepage = https://discord.gg/NwWUcSk
+homepage = https://forums.terraria.org/index.php?threads/darkpuppeys-journey-in-code.78934/#post-1739963
 modReferences = BaseMod
 includePDB = false

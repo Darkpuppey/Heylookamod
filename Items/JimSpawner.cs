@@ -38,7 +38,8 @@ namespace Heylookamod.Items
             pCenterY = (int)player.Center.Y;
             NPC.NewNPC((int)player.Center.X, (pCenterY - 2500), mod.NPCType("JimHead"));
             Main.PlaySound(SoundID.Roar, player.position, 0);
-                Main.NewText("[c/d5ff82:Battle Theme of Jim:] XI - Solar Storm");
+            Main.NewText("[c/FFA500:Battle Jim has awoken!]");
+            Main.NewText("[c/d5ff82:Battle Theme of Jim:] XI - Solar Storm");
             return true;
         }
         public override void AddRecipes()
