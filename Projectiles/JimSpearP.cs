@@ -14,8 +14,8 @@ namespace Heylookamod.Projectiles
 
         public override void SetDefaults()
         {
-            projectile.width = 104;
-            projectile.height = 104;
+            projectile.width = 30;
+            projectile.height = 30;
             projectile.aiStyle = 19;
             projectile.penetrate = -1;
             projectile.scale = 1f;

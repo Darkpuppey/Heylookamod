@@ -83,7 +83,8 @@ namespace Heylookamod.WorldGeneration
             int biomeRadius = worldSize == 3 ? 400 : worldSize == 2 ? 300 : 200;
 
             Dictionary<Color, int> colorToTile = new Dictionary<Color, int>();
-            colorToTile[new Color(0, 0, 255)] = mod.TileType("Crystal");
+            colorToTile[new Color(0, 0, 255)] = mod.TileType("OvergrowthGrass");
+            colorToTile[new Color(0, 255, 0)] = mod.TileType("OvergrowthStone");
             colorToTile[new Color(255, 0, 0)] = -2; //turn into air
             colorToTile[Color.Black] = -1; //don't touch when genning		
 

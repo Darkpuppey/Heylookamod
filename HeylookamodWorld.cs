@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework.Graphics;
 using BaseMod;
 using Heylookamod.Tiles;
 using Heylookamod.WorldGeneration;
+using Heylookamod.Items;
 
 namespace Heylookamod
 {
@@ -21,14 +22,15 @@ namespace Heylookamod
     {
         private const int saveVersion = 0;
         public static bool downedJim = false;
+        public static bool Vulcanite;
         private Vector2 FloweyPos = new Vector2(0, 0);
         public static int FloweyTiles = 0;
 
         public override void Initialize()
         {
             downedJim = false;
+            Vulcanite = downedJim;
         }
-
         public override TagCompound Save()
         {
             var downed = new List<string>();
@@ -43,6 +45,19 @@ namespace Heylookamod
         {
             var downed = tag.GetList<string>("downed");
             downedJim = downed.Contains("JimHead");
+            Vulcanite = downedJim;
+        }
+
+        class HeylookamodGlobalNPC : GlobalNPC
+        {
+            public override void NPCLoot(NPC npc)
+            {
+                if (npc.type == NPCID.DungeonGuardian)
+                {
+                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Mistake"));
+                }
+                // Addtional if statements here if you would like to add drops to other vanilla npc.
+            }
         }
 
         public override void LoadLegacy(BinaryReader reader)
@@ -61,7 +76,7 @@ namespace Heylookamod
 
         public override void TileCountsAvailable(int[] tileCounts)
         {
-            FloweyTiles = tileCounts[mod.TileType<Crystal>()];
+            FloweyTiles = tileCounts[mod.TileType<Tiles.OvergrowthGrass>()];
         }
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
@@ -126,6 +141,21 @@ namespace Heylookamod
             downedJim = flags[0];
         }
 
+        public override void PostUpdate()
+        {
+            if (downedJim == true)
+            {
+                if (Vulcanite == false)
+                {
+                    Vulcanite = true;
+                    Main.NewText("A roar of flames quivers in the distance...", Color.OrangeRed.R, Color.OrangeRed.G, Color.Yellow.B);
+                    for (int k = 0; k < (int)(Main.maxTilesX * Main.maxTilesY * 6E-05); k++)
+                    {
+                        WorldGen.OreRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)Main.rockLayer, Main.maxTilesY - 300), WorldGen.genRand.Next(7, 10), WorldGen.genRand.Next(11, 12), (ushort)mod.TileType("VulcaniteOre"));
+                    }
+                }
+            }
+        }
         // A helper method that draws a bordered rectangle. 
         public static void DrawBorderedRect(SpriteBatch spriteBatch, Color color, Color borderColor, Vector2 position, Vector2 size, int borderWidth)
         {

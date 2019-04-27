@@ -1,11 +1,9 @@
-using System.IO;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.IO;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using BaseMod;
-using System;
 
 namespace Heylookamod.NPCs.Jim
 {
@@ -28,9 +26,6 @@ namespace Heylookamod.NPCs.Jim
             npc.boss = true;
             music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/SolarStorm");
             bossBag = mod.ItemType("JimBag");
-        }
-        public void checkDead()
-        {
         }
         public override void BossLoot(ref string name, ref int potionType)
         {
@@ -94,6 +89,7 @@ namespace Heylookamod.NPCs.Jim
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JimSword"));
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JimBow"));
                 }
+                Item.NewItem(npc.getRect(), mod.ItemType("VulcaniteOre"), Main.rand.Next(20, 30));
             }
             npc.position = position;
         }
@@ -245,6 +241,10 @@ namespace Heylookamod.NPCs.Jim
             music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/SolarStorm");
         }
 
+        public override void NPCLoot()
+        {
+            Item.NewItem(npc.getRect(), mod.ItemType("VulcaniteOre"), Main.rand.Next(1, 3));
+        }
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.75f * bossLifeScale);
@@ -395,8 +395,6 @@ namespace Heylookamod.NPCs.Jim
         {
             DisplayName.SetDefault("Jim");
         }
-
-        public int Jimlife = 1;
 
         public override void Init()
         {
