@@ -1,0 +1,246 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D87D26ED-A69B-4433-B821-67793B767537}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>Heylookamod</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Heylookamod</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseMod, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Stuff\BaseMod.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xna.Framework.Xact.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Terraria">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Terraria\Terraria.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Buffs\friendPet.png" />
+    <Content Include="build.txt" />
+    <Content Include="description.txt" />
+    <Content Include="Dusts\OrangeResidue.png" />
+    <Content Include="Healthbars\JimBarEnd.png" />
+    <Content Include="Healthbars\JimBarFill.png" />
+    <Content Include="Healthbars\JimBarMiddle.png" />
+    <Content Include="Healthbars\JimBarStart.png" />
+    <Content Include="Items\DTGun.png" />
+    <Content Include="Items\ErrorGun.png" />
+    <Content Include="Items\GodDammit.png" />
+    <Content Include="Items\JimDrops\JimBag.png" />
+    <Content Include="Items\JimDrops\JimBow.png" />
+    <Content Include="Items\JimDrops\JimExpert.png" />
+    <Content Include="Items\JimDrops\JimExpertAnkh.png" />
+    <Content Include="Items\JimDrops\JimMask.png" />
+    <Content Include="Items\JimDrops\JimMask_Head.png" />
+    <Content Include="Items\JimDrops\JimSpear.png" />
+    <Content Include="Items\JimDrops\JimStaff.png" />
+    <Content Include="Items\JimDrops\JimSword.png" />
+    <Content Include="Items\JimDrops\JimTrophy.png" />
+    <Content Include="Items\JimDrops\LavaGlob.png" />
+    <Content Include="Items\JimothySword.png" />
+    <Content Include="Items\Mistake.png" />
+    <Content Include="Items\MoltenEssence.png" />
+    <Content Include="Items\OvergrowthGrass.png" />
+    <Content Include="Items\OvergrowthStone.png" />
+    <Content Include="Items\Vulcanite\JimExplosion.png" />
+    <Content Include="Items\Vulcanite\VulcaniteBar.png" />
+    <Content Include="Items\Vulcanite\VulcaniteCrusher.png" />
+    <Content Include="Items\Vulcanite\VulcaniteOre.png" />
+    <Content Include="Items\Vulcanite\VulcaniteThrasher.png" />
+    <Content Include="Items\Vulcanite\VulcaniteThrasherP.png" />
+    <Content Include="Projectiles\CrystalJimBall.png" />
+    <Content Include="Projectiles\JimBallFriendly.png" />
+    <Content Include="Projectiles\JimBallFriendlyStage2.png" />
+    <Content Include="Projectiles\JimBallFriendlyStage3.png" />
+    <Content Include="Projectiles\JimSpearP.png" />
+    <Content Include="Projectiles\VulcaniteArrow.png" />
+    <Content Include="Sounds\Music\Overgrowth.mp3" />
+    <Content Include="Sounds\Music\SolarStorm.mp3" />
+    <Content Include="Tiles\JimTrophy.png" />
+    <Content Include="icon-Borderless.png" />
+    <Content Include="icon.png" />
+    <Content Include="Items\BrokenTV.png" />
+    <Content Include="Items\FriendPet.png" />
+    <Content Include="Items\GonerWings.png" />
+    <Content Include="Items\GonerWings_Wings.png" />
+    <Content Include="Items\JimSpawner.png" />
+    <Content Include="Items\Peashooter.png" />
+    <Content Include="Items\PetalPusher.png" />
+    <Content Include="Items\StrangeFlowerSpawner.png" />
+    <Content Include="Items\StrangeFlowerWeapon.png" />
+    <Content Include="Items\StructureItem.png" />
+    <Content Include="NPCs\JimothyBody.png" />
+    <Content Include="NPCs\JimothyHead.png" />
+    <Content Include="NPCs\JimothyTail.png" />
+    <Content Include="NPCs\Jim\JimBody.png" />
+    <Content Include="NPCs\Jim\JimHead.png" />
+    <Content Include="NPCs\Jim\JimHead_Head_Boss.png" />
+    <Content Include="NPCs\Jim\JimmyBody.png" />
+    <Content Include="NPCs\Jim\JimmyHead.png" />
+    <Content Include="NPCs\Jim\JimmyTail.png" />
+    <Content Include="NPCs\Jim\JimTail.png" />
+    <Content Include="Projectiles\ClownCopter.png" />
+    <Content Include="Projectiles\GhostBody1.png" />
+    <Content Include="Projectiles\GhostBody2.png" />
+    <Content Include="Projectiles\GhostHead.png" />
+    <Content Include="Projectiles\GhostTail.png" />
+    <Content Include="Projectiles\JimBall.png" />
+    <Content Include="Projectiles\JimFlame.png" />
+    <Content Include="Projectiles\JimothyBall.png" />
+    <Content Include="Projectiles\JimShard.png" />
+    <Content Include="Projectiles\Kirby.png" />
+    <Content Include="Projectiles\Orange.png" />
+    <Content Include="Projectiles\Pea.png" />
+    <Content Include="Projectiles\Pellet.png" />
+    <Content Include="Projectiles\PelletHoming.png" />
+    <Content Include="Projectiles\Petal.png" />
+    <Content Include="Projectiles\RescueBoat.png" />
+    <Content Include="Projectiles\Vortex.png" />
+    <Content Include="Sounds\FloweyHurt.wav" />
+    <Content Include="Sounds\FloweyLaugh.wav" />
+    <Content Include="Tiles\BrokenTV.png" />
+    <Content Include="Tiles\BrokenTVGlow.png" />
+    <Content Include="Tiles\Crystal - Copy.png" />
+    <Content Include="Tiles\OvergrowthGrass.png" />
+    <Content Include="Tiles\OvergrowthStone.png" />
+    <Content Include="Tiles\StrangeFlower.png" />
+    <Content Include="Tiles\VulcaniteOre.png" />
+    <Content Include="Walls\OvergrowthWall.png" />
+    <Content Include="WorldGeneration\FloweyCave.png" />
+    <Content Include="WorldGeneration\FloweyCaveDelete.png" />
+    <Content Include="WorldGeneration\FloweyCaveWall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buffs\friendPet.cs" />
+    <Compile Include="Dusts\OrangeResidue.cs" />
+    <Compile Include="Items\DTGun.cs" />
+    <Compile Include="Items\ErrorGun.cs" />
+    <Compile Include="Items\JimDrops\JimBag.cs" />
+    <Compile Include="Items\JimDrops\JimBow.cs" />
+    <Compile Include="Items\JimDrops\JimExpert.cs" />
+    <Compile Include="Items\JimDrops\JimExpertAnkh.cs" />
+    <Compile Include="Items\JimDrops\JimMask.cs" />
+    <Compile Include="Items\JimDrops\JimSpear.cs" />
+    <Compile Include="Items\JimDrops\JimStaff.cs" />
+    <Compile Include="Items\JimDrops\JimSword.cs" />
+    <Compile Include="Items\JimDrops\JimTrophy.cs" />
+    <Compile Include="Items\JimDrops\LavaGlob.cs" />
+    <Compile Include="Items\JimothySword.cs" />
+    <Compile Include="Items\Mistake.cs" />
+    <Compile Include="Items\MoltenEssence.cs" />
+    <Compile Include="Items\OvergrowthStone.cs" />
+    <Compile Include="Items\Vulcanite\JimExplosion.cs" />
+    <Compile Include="Items\Vulcanite\VulcaniteBar.cs" />
+    <Compile Include="Items\Vulcanite\VulcaniteCrusher.cs" />
+    <Compile Include="Items\Vulcanite\VulcaniteOre.cs" />
+    <Compile Include="Items\Vulcanite\VulcaniteThrasher.cs" />
+    <Compile Include="Items\Vulcanite\VulcaniteThrasherP.cs" />
+    <Compile Include="Projectiles\CrystalJimBall.cs" />
+    <Compile Include="Projectiles\JimBallFriendly.cs" />
+    <Compile Include="Projectiles\JimBallFriendlyStage2.cs" />
+    <Compile Include="Projectiles\JimBallFriendlyStage3.cs" />
+    <Compile Include="Projectiles\JimSpearP.cs" />
+    <Compile Include="Projectiles\MistakeP.cs" />
+    <Compile Include="Projectiles\VulcaniteArrow.cs" />
+    <Compile Include="Tiles\JimTrophy.cs" />
+    <Compile Include="Heylookamod.cs" />
+    <Compile Include="HeylookamodPlayer.cs" />
+    <Compile Include="HeylookamodWorld.cs" />
+    <Compile Include="Items\BrokenTV.cs" />
+    <Compile Include="Items\OvergrowthGrass.cs" />
+    <Compile Include="Items\FriendPet.cs" />
+    <Compile Include="Items\GonerWings.cs" />
+    <Compile Include="Items\JimSpawner.cs" />
+    <Compile Include="Items\Peashooter.cs" />
+    <Compile Include="Items\PetalPusher.cs" />
+    <Compile Include="Items\StrangeFlowerSpawner.cs" />
+    <Compile Include="Items\StrangeFlowerWeapon.cs" />
+    <Compile Include="Items\StructureItem.cs" />
+    <Compile Include="NPCs\Jimothy.cs" />
+    <Compile Include="NPCs\Jim\Jim.cs" />
+    <Compile Include="NPCs\Jim\Jimmy.cs" />
+    <Compile Include="NPCs\Worm.cs" />
+    <Compile Include="Projectiles\ClownCopter.cs" />
+    <Compile Include="Projectiles\GhostLevi.cs" />
+    <Compile Include="Projectiles\JimBall.cs" />
+    <Compile Include="Projectiles\JimFlame.cs" />
+    <Compile Include="Projectiles\JimothyBall.cs" />
+    <Compile Include="Projectiles\JimShard.cs" />
+    <Compile Include="Projectiles\Kirby.cs" />
+    <Compile Include="Projectiles\Orange.cs" />
+    <Compile Include="Projectiles\Pea.cs" />
+    <Compile Include="Projectiles\Pellet.cs" />
+    <Compile Include="Projectiles\PelletHoming.cs" />
+    <Compile Include="Projectiles\Petal.cs" />
+    <Compile Include="Projectiles\RescueBoat.cs" />
+    <Compile Include="Projectiles\Vortex.cs" />
+    <Compile Include="Tiles\BrokenTV.cs" />
+    <Compile Include="Tiles\OvergrowthGrass.cs" />
+    <Compile Include="Tiles\OvergrowthStone.cs" />
+    <Compile Include="Tiles\StrangeFlower.cs" />
+    <Compile Include="Tiles\VulcaniteOre.cs" />
+    <Compile Include="Walls\OvergrowthWall.cs" />
+    <Compile Include="WorldGeneration\FloweyCave.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\Heylookamod\v15\.suo" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Steam\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
