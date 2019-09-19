@@ -1,0 +1,46 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj",
+        "projectName": "Heylookamod",
+        "projectPath": "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj",
+        "packagesPath": "C:\\Users\\darkp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\darkp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    }
+  }
+}

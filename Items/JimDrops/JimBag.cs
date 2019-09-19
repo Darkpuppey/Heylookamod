@@ -19,9 +19,9 @@ namespace Heylookamod.Items.JimDrops
             item.height = 32;
             item.rare = 9;
             item.expert = true;
-            bossBagNPC = mod.NPCType("JimHead");
         }
 
+        public override int BossBagNPC => mod.NPCType("JimHead");
         public override bool CanRightClick()
         {
             return true;

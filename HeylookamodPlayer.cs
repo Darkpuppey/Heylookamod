@@ -12,7 +12,7 @@ using Terraria.GameInput;
 
 namespace Heylookamod
 {
-    // ModPlayer classes provide a way to attach data to Players and act on that data. ExamplePlayer has a lot of functionality related to 
+    // ModPlayer classes provide a way to attach data to Players and act on that data. HeylookamodPlayer has a lot of functionality related to 
     // several effects and items in ExampleMod. See SimpleModPlayer for a very simple example of how ModPlayer classes work.
     public class HeylookamodPlayer : ModPlayer
     {
@@ -27,9 +27,10 @@ namespace Heylookamod
         public bool infinity = false;
         public bool JimExpert = false;
         public bool JimExpertLava = false;
+        public static bool EnteredOvergrowth = false;
         // These 5 relate to ExampleCostume.
 
-        public bool ZoneExample = false;
+        public bool Overgrowth = false;
 
         public override void ResetEffects()
         {
@@ -41,7 +42,7 @@ namespace Heylookamod
             friendPet = false;
             JimExpert = false;
             JimExpertLava = false;
-        }
+    }
 
         // In MP, other clients need accurate information about your player or else bugs happen.
         // clientClone, SyncPlayer, and SendClientChanges, ensure that information is correct.
@@ -146,6 +147,39 @@ namespace Heylookamod
                 }
                 Main.PlaySound(SoundID.Shatter, player.position);
             }
+        }
+        public override void UpdateBiomes()
+        {
+            Overgrowth = (HeylookamodWorld.FloweyTiles > 50);
+            if(!EnteredOvergrowth & Overgrowth)
+            {
+                Main.NewText("The Overgrowth");
+                Main.NewText("Theme of The Overgrowth: Fear - Instrumental Mix by Vetrom");
+                EnteredOvergrowth = true;
+            }
+        }
+        public override bool CustomBiomesMatch(Player other)
+        {
+            HeylookamodPlayer modOther = other.GetModPlayer <HeylookamodPlayer>(mod);
+            return Overgrowth == modOther.Overgrowth;
+        }
+        public override void CopyCustomBiomesTo(Player other)
+        {
+            HeylookamodPlayer modOther = other.GetModPlayer<HeylookamodPlayer>(mod);
+            modOther.Overgrowth = Overgrowth;
+        }
+
+        public override void SendCustomBiomes(BinaryWriter writer)
+        {
+            BitsByte flags = new BitsByte();
+            flags[0] = Overgrowth;
+            writer.Write(flags);
+        }
+
+        public override void ReceiveCustomBiomes(BinaryReader reader)
+        {
+            BitsByte flags = reader.ReadByte();
+            Overgrowth = flags[0];
         }
     }
 }

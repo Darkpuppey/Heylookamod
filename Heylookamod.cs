@@ -3,6 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
 using Terraria.UI;
 using System.Collections.Generic;
+using Terraria;
+using Microsoft.Xna.Framework;
+
 namespace Heylookamod
 {
     class Heylookamod : Mod
@@ -46,6 +49,39 @@ namespace Heylookamod
                 AutoloadBackgrounds = true
             };
             instance = this;
+        }
+        public override void UpdateMusic(ref int music, ref MusicPriority priority)
+        {
+            if (Main.myPlayer != -1 && !Main.gameMenu && Main.LocalPlayer.active)
+            {
+                // Make sure your logic here goes from lowest priority to highest so your intended priority is maintained.
+                if (Main.LocalPlayer.GetModPlayer<HeylookamodPlayer>().Overgrowth)
+                {
+                    music = GetSoundSlot(SoundType.Music, "Sounds/Music/Overgrowth");
+                    priority = MusicPriority.BiomeHigh;
+                }
+            }
+        }
+        public override void ModifySunLightColor(ref Color tileColor, ref Color backgroundColor)
+        {
+            if (HeylookamodWorld.FloweyTiles > 0)
+            {
+                float OvergrowthStrength = HeylookamodWorld.FloweyTiles / 200f;
+                OvergrowthStrength = Math.Min(OvergrowthStrength, 1f);
+
+                int sunR = backgroundColor.R;
+                int sunG = backgroundColor.G;
+                int sunB = backgroundColor.B;
+                // Remove some green and more red.
+                sunR -= (int)(50f * OvergrowthStrength * (backgroundColor.R / 255f));
+                sunB -= (int)(90f * OvergrowthStrength * (backgroundColor.B / 255f));
+                sunR = Utils.Clamp(sunR, 15, 255);
+                sunG = Utils.Clamp(sunG, 15, 255);
+                sunB = Utils.Clamp(sunB, 15, 255);
+                backgroundColor.R = (byte)sunR;
+                backgroundColor.G = (byte)sunG;
+                backgroundColor.B = (byte)sunB;
+            }
         }
     }
 }

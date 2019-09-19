@@ -23,8 +23,8 @@ namespace Heylookamod
         private const int saveVersion = 0;
         public static bool downedJim = false;
         public static bool Vulcanite;
-        private Vector2 FloweyPos = new Vector2(0, 0);
         public static int FloweyTiles = 0;
+        private Vector2 OvergrowthPos = new Vector2(0, 0);
 
         public override void Initialize()
         {
@@ -76,7 +76,7 @@ namespace Heylookamod
 
         public override void TileCountsAvailable(int[] tileCounts)
         {
-            FloweyTiles = tileCounts[mod.TileType<Tiles.OvergrowthGrass>()];
+            FloweyTiles = tileCounts[mod.TileType<Tiles.OvergrowthGrass>()] + tileCounts[mod.TileType<Tiles.OvergrowthStone>()] + tileCounts[mod.WallType<Walls.OvergrowthWall>()];
         }
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
@@ -94,19 +94,21 @@ namespace Heylookamod
 
         private void FloweyCave(GenerationProgress progress)
         {
+            int q = (int)WorldGen.worldSurfaceHigh - 100;
+            OvergrowthPos.X = Main.maxTilesX * 0.31f;
+            OvergrowthPos.Y = q;
             progress.Message = "Howdy!";
             FloweyCaveBegin();
         }
 
         public void FloweyCaveBegin()
         {
-            Point origin = new Point((int)(Main.maxTilesX * 0.3f), (Main.spawnTileY)); ;
+            Point origin = new Point((int)((int)OvergrowthPos.X), ((int)OvergrowthPos.Y)); ;
             origin.Y = BaseWorldGen.GetFirstTileFloor(origin.X, origin.Y, true);
             FloweyCaveDelete delete = new FloweyCaveDelete();
             FloweyCave biome = new FloweyCave();
             delete.Place(origin, WorldGen.structures);
             biome.Place(origin, WorldGen.structures);
-            WorldGen.PlaceTile(origin.X + 111, origin.Y + 176, (ushort)TileID.Gold);
         }
 
         public override void NetSend(BinaryWriter writer)

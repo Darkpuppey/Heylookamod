@@ -13,7 +13,7 @@ namespace Heylookamod.Items
         {
             item.maxStack = 999;
             item.width = 18;
-            item.height = 20;
+            item.height = 18;
             item.rare = 7;
         }
     }

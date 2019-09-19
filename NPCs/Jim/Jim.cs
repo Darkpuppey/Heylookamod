@@ -15,7 +15,7 @@ namespace Heylookamod.NPCs.Jim
             // Head is 10 defence, body 20, tail 30.
             npc.CloneDefaults(NPCID.DiggerHead);
             npc.aiStyle = -1;
-            npc.width = 200;
+            npc.width = 198;
             npc.height = 198;
             npc.HitSound = SoundID.NPCHit3;
             npc.DeathSound = SoundID.NPCDeath5;
@@ -96,7 +96,7 @@ namespace Heylookamod.NPCs.Jim
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
             npc.lifeMax = (int)(npc.lifeMax * 0.75f * bossLifeScale);
-            npc.damage = (int)(npc.damage * 2f);
+            npc.damage = (int)(npc.damage * 1.5f);
             npc.defense = 100;
         }
         private static int TilesMaxY
@@ -278,7 +278,7 @@ namespace Heylookamod.NPCs.Jim
                 Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody"), 1f);
                 Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody2"), 1f);
                 Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody3"), 1f);
-                if (HeylookamodWorld.downedJim == false)
+                if (HeylookamodWorld.downedJim == false && player.dead == false)
                 {
                     HeylookamodWorld.downedJim = true;
                 }

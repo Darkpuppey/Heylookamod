@@ -35,7 +35,7 @@ namespace Heylookamod.Projectiles
             // aiStyle 99 is used for all yoyos, and is Extremely suggested, as yoyo are extremely difficult without them
             projectile.aiStyle = 99;
             projectile.friendly = true;
-            projectile.penetrate = 1;
+            projectile.penetrate = -1;
             projectile.melee = true;
             projectile.scale = 1f;
             projectile.tileCollide = false;
@@ -57,13 +57,6 @@ namespace Heylookamod.Projectiles
             if(target.boss == true)
             {
                 damage /= 2;
-            }
-        }
-        public override void AI()
-        {
-            if (projectile.penetrate <= 2)
-            {
-                projectile.penetrate = -1;
             }
         }
     }
