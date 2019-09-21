@@ -14,7 +14,7 @@ namespace Heylookamod.NPCs
             // Head is 10 defence, body 20, tail 30.
             npc.CloneDefaults(NPCID.DiggerHead);
             npc.aiStyle = -1;
-            npc.width = 72;
+            npc.width = 64;
             npc.height = 66;
             npc.HitSound = SoundID.NPCHit3;
             npc.DeathSound = SoundID.NPCDeath5;
@@ -27,6 +27,12 @@ namespace Heylookamod.NPCs
         public override void Init()
         {
             base.Init();
+            if (NPC.AnyNPCs(mod.NPCType("JimHead")))
+            {
+                npc.lifeMax /= 2;
+                npc.damage /= 2;
+                npc.defense /= 2;
+            }
             head = true;
         }
 
@@ -51,6 +57,7 @@ namespace Heylookamod.NPCs
         //}
         //}
 
+        bool SpawnedDuringJim = false;
         public override void CustomBehavior()
         {
             if (Main.netMode != 1)
@@ -67,7 +74,7 @@ namespace Heylookamod.NPCs
                         Vector2 direction = (target.Center - npc.Center).SafeNormalize(Vector2.UnitX);
                         direction = direction.RotatedByRandom(MathHelper.ToRadians(10));
 
-                        int projectile = Projectile.NewProjectile(npc.Center, npc.velocity * 2, mod.ProjectileType("JimothyBall"), 50, 0, Main.myPlayer);
+                        int projectile = Projectile.NewProjectile(npc.Center, npc.velocity * 2, mod.ProjectileType("JimothyBall"), npc.damage - 20, 0, Main.myPlayer);
                         Main.PlaySound(SoundID.DD2_FlameburstTowerShot, npc.Center);
                         attackCounter = 10;
                         npc.netUpdate = true;
@@ -77,6 +84,10 @@ namespace Heylookamod.NPCs
                 {
                     Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimothyHead"), 1f);
                 }
+                if ((NPC.AnyNPCs(mod.NPCType("JimHead"))))
+                {
+                    SpawnedDuringJim = true;
+                }
             }
         }
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
@@ -84,6 +95,10 @@ namespace Heylookamod.NPCs
             if (!NPC.downedPlantBoss)
             {
                 return 0f;
+            }
+            if (HeylookamodPlayer.Vulcanite)
+            {
+                return 0.5f;
             }
             if (SpawnCondition.Underworld.Chance > 0f)
             {
@@ -93,14 +108,14 @@ namespace Heylookamod.NPCs
         }
         public override void NPCLoot()
         {
-            if (!NPC.AnyNPCs(mod.NPCType("JimHead")))
+            if (SpawnedDuringJim == false)
             {
                 Item.NewItem(npc.getRect(), mod.ItemType("MoltenEssence"), Main.rand.Next(2, 4));
                 if ((Main.rand.Next(20) < 1))
                 {
                     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("JimothySword"));
                 }
-                if(HeylookamodWorld.downedJim)
+                if (HeylookamodWorld.downedJim)
                 {
                     Item.NewItem(npc.getRect(), mod.ItemType("VulcaniteOre"), Main.rand.Next(5, 10));
                 }
@@ -121,6 +136,16 @@ namespace Heylookamod.NPCs
             npc.lifeMax = 1500;
             npc.defense = 60;
             npc.damage = 60;
+        }
+        public override void Init()
+        {
+            base.Init();
+            if (NPC.AnyNPCs(mod.NPCType("JimHead")))
+            {
+                npc.lifeMax /= 2;
+                npc.damage /= 2;
+                npc.defense /= 2;
+            }
         }
         public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)
         {
@@ -159,6 +184,17 @@ namespace Heylookamod.NPCs
             npc.damage = 70;
         }
 
+        public override void Init()
+        {
+            base.Init();
+            if (NPC.AnyNPCs(mod.NPCType("JimHead")))
+            {
+                npc.lifeMax /= 2;
+                npc.damage /= 2;
+                npc.defense /= 2;
+            }
+            tail = true;
+        }
         public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)
         {
             return false;
@@ -179,12 +215,6 @@ namespace Heylookamod.NPCs
             {
                 Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimothyTail"), 1f);
             }
-        }
-
-        public override void Init()
-        {
-            base.Init();
-            tail = true;
         }
     }
 

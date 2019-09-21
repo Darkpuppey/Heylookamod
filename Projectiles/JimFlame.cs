@@ -16,7 +16,7 @@ namespace Heylookamod.Projectiles
         public override void SetDefaults()
         {
             projectile.width = 22;               //The width of projectile hitbox
-            projectile.height = 20;              //The height of projectile hitbox
+            projectile.height = 12;              //The height of projectile hitbox
             projectile.hostile = true;         //Can the projectile deal damage to the player?
             projectile.friendly = false;
             projectile.alpha = 0;

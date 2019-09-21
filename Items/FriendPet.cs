@@ -18,7 +18,6 @@ namespace Heylookamod.Items
             item.CloneDefaults(ItemID.ZephyrFish);
             item.shoot = mod.ProjectileType("Orange");
             item.shoot = mod.ProjectileType("Vortex");
-            item.shoot = mod.ProjectileType("ClownCopter");
             item.shoot = mod.ProjectileType("RescueBoat");
             item.shoot = mod.ProjectileType("Kirby");
             item.buffType = mod.BuffType("friendPet");

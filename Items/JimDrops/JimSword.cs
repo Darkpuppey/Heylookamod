@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,7 +18,7 @@ namespace Heylookamod.Items.JimDrops
             item.damage = 60;           //The damage of your weapon
             item.melee = true;          //Is your weapon a melee weapon?
             item.width = 66;            //Weapon's texture's width
-            item.height = 58;           //Weapon's texture's height
+            item.height = 60;           //Weapon's texture's height
             item.useTime = 10;          //The time span of using the weapon. Remember in terraria, 60 frames is a second.
             item.useAnimation = 60;         //The time span of the using animation of the weapon, suggest set it the same as useTime.
             item.useStyle = 1;         

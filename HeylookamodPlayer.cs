@@ -31,6 +31,7 @@ namespace Heylookamod
         // These 5 relate to ExampleCostume.
 
         public bool Overgrowth = false;
+        public static bool Vulcanite = false;
 
         public override void ResetEffects()
         {
@@ -72,7 +73,7 @@ namespace Heylookamod
             {
                 if (player.position.Y <= (Main.maxTilesY * 13))
                 {
-                    player.position.Y = (Main.maxTilesY * 14f);
+                    player.position.Y = (Main.maxTilesY * 13f);
                 }
             }
         }
@@ -151,7 +152,8 @@ namespace Heylookamod
         public override void UpdateBiomes()
         {
             Overgrowth = (HeylookamodWorld.FloweyTiles > 50);
-            if(!EnteredOvergrowth & Overgrowth)
+            Vulcanite = (HeylookamodWorld.NearVulcanite > 5 && player.ZoneRockLayerHeight);
+            if (!EnteredOvergrowth & Overgrowth)
             {
                 Main.NewText("The Overgrowth");
                 Main.NewText("Theme of The Overgrowth: Fear - Instrumental Mix by Vetrom");

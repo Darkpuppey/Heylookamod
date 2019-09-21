@@ -19,9 +19,9 @@ namespace Heylookamod.NPCs.Jim
             npc.HitSound = SoundID.NPCHit3;
             npc.DeathSound = SoundID.NPCDeath5;
             npc.lifeMax = 250;
-            npc.defense = 40;
+            npc.defense = 20;
             npc.value = 1250f;
-            npc.damage = 40;
+            npc.damage = 15;
         }
 
         public override void Init()
@@ -36,6 +36,15 @@ namespace Heylookamod.NPCs.Jim
             writer.Write(attackCounter);
         }
 
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            if (HeylookamodPlayer.Vulcanite)
+            {
+                return 1f;
+            }
+            else
+                return 0f;
+        }
         public override void ReceiveExtraAI(BinaryReader reader)
         {
             attackCounter = reader.ReadInt32();
@@ -92,8 +101,8 @@ namespace Heylookamod.NPCs.Jim
             npc.height = 14;
             npc.HitSound = SoundID.NPCHit3;
             npc.lifeMax = 250;
-            npc.defense = 40;
-            npc.damage = 40;
+            npc.defense = 20;
+            npc.damage = 15;
         }
         public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)
         {
@@ -129,7 +138,7 @@ namespace Heylookamod.NPCs.Jim
             npc.HitSound = SoundID.NPCHit3;
             npc.lifeMax = 250;
             npc.defense = -10;
-            npc.damage = 40;
+            npc.damage = 15;
         }
 
         public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)

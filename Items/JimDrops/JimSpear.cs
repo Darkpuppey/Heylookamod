@@ -18,7 +18,7 @@ namespace Heylookamod.Items.JimDrops
 
 		public override void SetDefaults()
 		{
-			item.damage = 60;
+			item.damage = 100;
 			item.useStyle = 5;
 			item.useAnimation = 18;
 			item.useTime = 24;

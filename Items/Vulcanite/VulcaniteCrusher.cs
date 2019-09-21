@@ -19,7 +19,7 @@ namespace Heylookamod.Items.Vulcanite
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
-			item.useTime = 3;
+			item.useTime = 7;
 			item.useAnimation = 15;
 			item.pick = 205;
 			item.useStyle = 1;

@@ -24,6 +24,7 @@ namespace Heylookamod
         public static bool downedJim = false;
         public static bool Vulcanite;
         public static int FloweyTiles = 0;
+        public static int NearVulcanite = 0;
         private Vector2 OvergrowthPos = new Vector2(0, 0);
 
         public override void Initialize()
@@ -77,6 +78,7 @@ namespace Heylookamod
         public override void TileCountsAvailable(int[] tileCounts)
         {
             FloweyTiles = tileCounts[mod.TileType<Tiles.OvergrowthGrass>()] + tileCounts[mod.TileType<Tiles.OvergrowthStone>()] + tileCounts[mod.WallType<Walls.OvergrowthWall>()];
+            NearVulcanite = tileCounts[mod.TileType<Tiles.VulcaniteOre>()];
         }
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)

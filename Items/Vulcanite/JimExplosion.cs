@@ -40,7 +40,7 @@ namespace Heylookamod.Items.Vulcanite
                 }
             }
         }
-
+        int Explosion = 0;
         public override void AI()
         {
             if (++projectile.frameCounter >= 2)
@@ -50,6 +50,27 @@ namespace Heylookamod.Items.Vulcanite
                 {
                     projectile.timeLeft = 0;
                 }
+            }
+            if (Explosion == 0)
+            {
+                // Play explosion sound
+                Main.PlaySound(SoundID.DD2_ExplosiveTrapExplode, projectile.position);
+                // Smoke Dust spawn
+                for (int i = 0; i < 50; i++)
+                {
+                    int dustIndex = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 31, 0f, 0f, 100, default(Color), 1f);
+                    Main.dust[dustIndex].velocity *= 1.4f;
+                }
+                // Fire Dust spawn
+                for (int i = 0; i < 80; i++)
+                {
+                    int dustIndex = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 1f);
+                    Main.dust[dustIndex].noGravity = true;
+                    Main.dust[dustIndex].velocity *= 5f;
+                    dustIndex = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 6, 0f, 0f, 100, default(Color), 0.5f);
+                    Main.dust[dustIndex].velocity *= 3f;
+                }
+                Explosion = +1;
             }
         }
     }

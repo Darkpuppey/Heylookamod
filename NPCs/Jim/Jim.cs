@@ -175,8 +175,8 @@ namespace Heylookamod.NPCs.Jim
                 if (npc.life <= 0)
                 {
                     Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimHead"), 1f);
-                    Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimHead2"), 1f);
-                    Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimHead3"), 1f);
+                   //Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimHead2"), 1f);
+                   //Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimHead3"), 1f);
                     Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimHead4"), 1f);
                     Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimHead5"), 1f);
                 }
@@ -276,8 +276,8 @@ namespace Heylookamod.NPCs.Jim
             if (npc.life <= 0)
             {
                 Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody"), 1f);
-                Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody2"), 1f);
-                Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody3"), 1f);
+                //Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody2"), 1f);
+                //Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimBody3"), 1f);
                 if (HeylookamodWorld.downedJim == false && player.dead == false)
                 {
                     HeylookamodWorld.downedJim = true;
@@ -382,7 +382,7 @@ namespace Heylookamod.NPCs.Jim
                 if (npc.life <= 0)
                 {
                     Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimTail"), 1f);
-                    Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimTail2"), 1f);
+                    //Gore.NewGore(npc.position, npc.velocity, mod.GetGoreSlot("Gores/JimTail2"), 1f);
                 }
             }
         }

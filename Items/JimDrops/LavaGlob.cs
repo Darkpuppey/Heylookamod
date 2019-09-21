@@ -7,7 +7,7 @@ namespace Heylookamod.Items.JimDrops
 		public override void SetStaticDefaults()
 		{
             DisplayName.SetDefault("Lava Glob");
-			Tooltip.SetDefault("\n[c/ff0000:Okay Javyz, I added it, now be quiet.]");
+			Tooltip.SetDefault("Smh Javyz");
 		}
         public override void SetDefaults()
         {

@@ -9,7 +9,6 @@ namespace Heylookamod.Items.Vulcanite
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Vulcanite Bar");
-            Tooltip.SetDefault("It feels cool... yet still somehow hot.");
         }
         public override void SetDefaults()
         {

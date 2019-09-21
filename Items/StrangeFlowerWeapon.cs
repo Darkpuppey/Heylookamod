@@ -15,6 +15,7 @@ namespace Heylookamod.Items
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The First Golden Flower");
+            Tooltip.SetDefault("I don't think it likes you very much");
             //DisplayName.SetDefault("The First Golden Flower");
             //Tooltip.SetDefault("\n[c/ff0000:Finally, it bends to our will. Perhaps now it will know who the TRUE god of this world is.]");
             //Post Plantera Info
@@ -35,17 +36,6 @@ namespace Heylookamod.Items
             item.autoReuse = true;
             item.shoot = mod.ProjectileType("PelletHoming");
             item.shootSpeed = 2f;
-        }
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            var line = new TooltipLine(mod, "PrePlantera:Die", "It seems quite angry at you for disturbing it... I'm not sure if this one is worth trusting.");
-            tooltips.Add(line);
-            if (NPC.downedPlantBoss)
-            {
-                tooltips.RemoveAll(l => l.Name.EndsWith(":Die"));
-                line = new TooltipLine(mod, "PostPlantera", "[c/ff0000:Finally, it bends to our will. Perhaps now it will know who the TRUE god of this world is.]");
-                tooltips.Add(line);
-            }
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {

@@ -4,3 +4,8 @@ Have fun
 V4.0
 -Added a new boss, Jim (Theres actual effort put into this boss I can assure you)
 -New Underworld enemy, Jimothy (T r u s t  m e)
+V5.0
+-Resprites for all!
+-Tweaked a few things relating to Jim and his friends
+-Added Vulcanite, a new ore that spawns after killing Jim
+-New Icon, hope you like it!

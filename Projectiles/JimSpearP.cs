@@ -97,7 +97,7 @@ namespace Heylookamod.Projectiles
             }
             if (Main.rand.Next(20) == 0)
             {
-                Projectile.NewProjectile(projectile.Center, projectile.velocity * 2, mod.ProjectileType("JimBallFriendly"), 30, 0, Main.myPlayer);
+                Projectile.NewProjectile(projectile.Center, projectile.velocity * 2, mod.ProjectileType("JimBallFriendly"), projectile.damage, 0, Main.myPlayer);
             }
         }
     }
