@@ -4,6 +4,7 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.Main;
 
 namespace Heylookamod.NPCs
 {
@@ -15,6 +16,18 @@ namespace Heylookamod.NPCs
             // DisplayName.SetDefault("Flutter Slime"); // Automatic from .lang files
         }
 
+        /// <summary>
+        /// Checks if a tile is solid, as well as if it's only solid on top, sloping, or a half brick.
+        /// </summary>
+        /// <param name="X">X tile coordinate.</param>
+        /// <param name="Y">Y tile coordinate.</param>
+        /// <param name="OnlySolidOnTop">Only include things like tables, platforms, etc.</param>
+        /// <param name="IncludeSloping">Include sloping blocks.</param>
+        /// <param name="IncludeHalfBricks">Include half bricks.</param>
+        /// <returns>True if the criterea are met, false if not.</returns>
+        public static bool SolidTileAt(int X, int Y, bool OnlySolidOnTop = false, bool IncludeSloping = false, bool IncludeHalfBricks = false)
+            => TileAt(X, Y).active() && tileSolid[TileTypeAt(X, Y)] && (!OnlySolidOnTop | tileSolidTop[TileTypeAt(X, Y)]) && (!IncludeSloping | TileAt(X, Y).slope() == 0) && IncludeHalfBricks ? TileAt(X, Y).halfBrick(): !TileAt(X, Y).halfBrick();
+ 
         public override void SetDefaults()
         {
             npc.width = 44;
