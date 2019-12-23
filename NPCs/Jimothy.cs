@@ -232,9 +232,9 @@ namespace Heylookamod.NPCs
         {
             minLength = 10;
             maxLength = 10;
-            tailType = mod.NPCType<JimothyTail>();
-            bodyType = mod.NPCType<JimothyBody>();
-            headType = mod.NPCType<JimothyHead>();
+            tailType = ModContent.NPCType<JimothyTail>();
+            bodyType = ModContent.NPCType<JimothyBody>();
+            headType = ModContent.NPCType<JimothyHead>();
             speed = 20.5f;
             turnSpeed = 0.145f;
         }

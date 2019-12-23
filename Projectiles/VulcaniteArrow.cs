@@ -14,6 +14,7 @@ namespace Heylookamod.Projectiles
             DisplayName.SetDefault("Vulcanite Arrow");     //The English name of the projectile
             ProjectileID.Sets.TrailCacheLength[projectile.type] = 5;    //The length of old position to be recorded
             ProjectileID.Sets.TrailingMode[projectile.type] = 0;        //The recording mode
+            projectile.localNPCHitCooldown = -1;
         }
 
         public override void SetDefaults()
@@ -24,6 +25,7 @@ namespace Heylookamod.Projectiles
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
+            target.immune[projectile.owner] = 1;
             Projectile.NewProjectile(projectile.Center, projectile.velocity * 0, mod.ProjectileType("VulcaniteArrowExplosion"), projectile.damage, 5, Main.myPlayer, 0, 0);
         }
         public override void AI()

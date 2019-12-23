@@ -26,7 +26,7 @@ namespace Heylookamod.Items.JimDrops
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<HeylookamodPlayer>(mod).JimExpert = true;
+            player.GetModPlayer<HeylookamodPlayer>().JimExpert = true;
             player.lavaImmune = true;
             player.buffImmune[24] = true;
             if (player.lavaWet == true)
@@ -40,7 +40,7 @@ namespace Heylookamod.Items.JimDrops
                 player.releaseJump = true;
                 player.accFlipper = true;
                 player.ignoreWater = true;
-                player.GetModPlayer<HeylookamodPlayer>(mod).JimExpertLava = true;
+                player.GetModPlayer<HeylookamodPlayer>().JimExpertLava = true;
             }
         }
     }

@@ -32,7 +32,7 @@ namespace Heylookamod.Projectiles
         public override void AI()
         {
             Player player = Main.player[projectile.owner];
-            HeylookamodPlayer modPlayer = player.GetModPlayer<HeylookamodPlayer>(mod);
+            HeylookamodPlayer modPlayer = player.GetModPlayer<HeylookamodPlayer>();
             if (player.dead)
             {
                 modPlayer.friendPet = false;

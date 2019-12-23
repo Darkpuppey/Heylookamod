@@ -162,12 +162,12 @@ namespace Heylookamod
         }
         public override bool CustomBiomesMatch(Player other)
         {
-            HeylookamodPlayer modOther = other.GetModPlayer <HeylookamodPlayer>(mod);
+            HeylookamodPlayer modOther = other.GetModPlayer <HeylookamodPlayer>();
             return Overgrowth == modOther.Overgrowth;
         }
         public override void CopyCustomBiomesTo(Player other)
         {
-            HeylookamodPlayer modOther = other.GetModPlayer<HeylookamodPlayer>(mod);
+            HeylookamodPlayer modOther = other.GetModPlayer<HeylookamodPlayer>();
             modOther.Overgrowth = Overgrowth;
         }
 

@@ -3,4 +3,4 @@ version = 0.500
 displayName = Darkpuppey's Journey in Code
 homepage = https://forums.terraria.org/index.php?threads/darkpuppeys-journey-in-code.78934/#post-1739963
 modReferences = BaseMod
-includePDB = false
+includePDB = true

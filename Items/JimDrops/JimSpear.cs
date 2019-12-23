@@ -36,7 +36,7 @@ namespace Heylookamod.Items.JimDrops
 			item.autoReuse = true; // Most spears don't autoReuse, but it's possible when used in conjunction with CanUseItem()
 
 			item.UseSound = SoundID.Item1;
-			item.shoot = mod.ProjectileType<JimSpearP>();
+			item.shoot = ModContent.ProjectileType<JimSpearP>();
 		}
 
         public override bool CanUseItem(Player player)

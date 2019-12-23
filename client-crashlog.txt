@@ -1,0 +1,6 @@
+10/18/2019 9:27:50 PM
+System.MissingMethodException: Method not found: 'System.Reflection.MethodInfo MonoMod.Utils.Extensions.FindMethod(System.Type, System.String, Boolean)'.
+   at Terraria.ModLoader.Engine.HiDefGraphicsIssues.Init()
+   at Terraria.ModLoader.ModLoader.EngineInit()
+   at Terraria.Program.LaunchGame_()
+

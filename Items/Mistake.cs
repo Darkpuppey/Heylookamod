@@ -39,7 +39,7 @@ namespace Heylookamod.Items
 
             item.UseSound = SoundID.Item1;
             item.value = Item.sellPrice(platinum: 1);
-            item.shoot = mod.ProjectileType<MistakeP>();
+            item.shoot = ModContent.ProjectileType<MistakeP>();
         }
     }
 }

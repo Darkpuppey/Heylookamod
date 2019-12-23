@@ -28,6 +28,11 @@ namespace Heylookamod.Items.Vulcanite
             drawOffsetX = 5;
             drawOriginOffsetY = 5;
             projectile.tileCollide = false;
+            projectile.localNPCHitCooldown = -1;
+        }
+        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        {
+           target.immune[projectile.owner] = 1;
         }
         public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {

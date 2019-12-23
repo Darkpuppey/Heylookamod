@@ -400,9 +400,9 @@ namespace Heylookamod.NPCs.Jim
         {
             minLength = 50;
             maxLength = 50; //75
-            tailType = mod.NPCType<JimTail>();
-            bodyType = mod.NPCType<JimBody>();
-            headType = mod.NPCType<JimHead>();
+            tailType = ModContent.NPCType<JimTail>();
+            bodyType = ModContent.NPCType<JimBody>();
+            headType = ModContent.NPCType<JimHead>();
             speed = 40.5f;
             turnSpeed = 0.25f;
         }

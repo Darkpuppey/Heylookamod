@@ -77,8 +77,8 @@ namespace Heylookamod
 
         public override void TileCountsAvailable(int[] tileCounts)
         {
-            FloweyTiles = tileCounts[mod.TileType<Tiles.OvergrowthGrass>()] + tileCounts[mod.TileType<Tiles.OvergrowthStone>()] + tileCounts[mod.WallType<Walls.OvergrowthWall>()];
-            NearVulcanite = tileCounts[mod.TileType<Tiles.VulcaniteOre>()];
+            FloweyTiles = tileCounts[ModContent.TileType<Tiles.OvergrowthGrass>()] + tileCounts[ModContent.TileType<Tiles.OvergrowthStone>()] + tileCounts[ModContent.WallType<Walls.OvergrowthWall>()];
+            NearVulcanite = tileCounts[ModContent.TileType<VulcaniteOre>()];
         }
 
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
