@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj",
+      "projectUniqueName": "C:\\Users\\darkp\\Documents\\GitHub\\Heylookamod\\Heylookamod.csproj",
       "projectName": "Heylookamod",
-      "projectPath": "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj",
+      "projectPath": "C:\\Users\\darkp\\Documents\\GitHub\\Heylookamod\\Heylookamod.csproj",
       "packagesPath": "C:\\Users\\darkp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darkp\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\obj\\",
+      "outputPath": "C:\\Users\\darkp\\Documents\\GitHub\\Heylookamod\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

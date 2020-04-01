@@ -31,11 +31,11 @@ namespace Heylookamod.NPCs
             npc.knockBackResist = .01f;
         }
 
-        public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
+        //public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        //{
             // we would like this npc to spawn in the overworld.
-            return SpawnCondition.Underworld.Chance * 0.5f;
-        }
+            //return SpawnCondition.Underworld.Chance * 0.5f;
+        //}
 
         // These const ints are for the benefit of the programmer. Organization is key to making an AI that behaves properly without driving you crazy.
         // Here I lay out what I will use each of the 4 npc.ai slots for.

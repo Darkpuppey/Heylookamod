@@ -33,7 +33,6 @@ namespace Heylookamod.Projectiles
                 dust = Main.dust[Dust.NewDust(position, 30, 30, 55, 0f, 0f, 161, new Color(255, 255, 255), 1f)];
                 dust.shader = GameShaders.Armor.GetSecondaryShader(7, Main.LocalPlayer);
             }
-            BaseMod.BaseAI.Look(projectile, 0);
             projectile.alpha += 2 + Main.rand.Next(3);
             if (projectile.alpha >= 254)
             {

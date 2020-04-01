@@ -11,7 +11,6 @@ using Terraria.GameContent.Generation;
 using Terraria.ModLoader.IO;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
-using BaseMod;
 using Heylookamod.Tiles;
 using Heylookamod.WorldGeneration;
 using Heylookamod.Items;
@@ -81,37 +80,7 @@ namespace Heylookamod
             NearVulcanite = tileCounts[ModContent.TileType<VulcaniteOre>()];
         }
 
-        public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
-        {
-            int shiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
-            int shiniesIndex2 = tasks.FindIndex(genpass => genpass.Name.Equals("Final Cleanup"));
-            if (Main.worldName == "worldgentest")
-            {
-                tasks.Insert(shiniesIndex2, new PassLegacy("FloweyCave", delegate (GenerationProgress progress)
-                {
-                    FloweyCave(progress);
-                }));
-            }
-        }
 
-        private void FloweyCave(GenerationProgress progress)
-        {
-            int q = (int)WorldGen.worldSurfaceHigh - 100;
-            OvergrowthPos.X = Main.maxTilesX * 0.31f;
-            OvergrowthPos.Y = q;
-            progress.Message = "Howdy!";
-            FloweyCaveBegin();
-        }
-
-        public void FloweyCaveBegin()
-        {
-            Point origin = new Point((int)((int)OvergrowthPos.X), ((int)OvergrowthPos.Y)); ;
-            origin.Y = BaseWorldGen.GetFirstTileFloor(origin.X, origin.Y, true);
-            FloweyCaveDelete delete = new FloweyCaveDelete();
-            FloweyCave biome = new FloweyCave();
-            delete.Place(origin, WorldGen.structures);
-            biome.Place(origin, WorldGen.structures);
-        }
 
         public override void NetSend(BinaryWriter writer)
         {
