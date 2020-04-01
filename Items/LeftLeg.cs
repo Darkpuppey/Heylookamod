@@ -5,68 +5,68 @@ using Terraria.ModLoader;
 
 namespace Heylookamod.Items
 {
-    public class LeftLeg : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("The Gun");
-            Tooltip.SetDefault("Just for experimenting.");
-        }
+	public class LeftLeg : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("The Gun");
+			Tooltip.SetDefault("Just for experimenting.");
+		}
 
-        public override void SetDefaults()
-        {
-            item.damage = 10;
-            item.width = 20;
-            item.height = 16;
-            item.useTime = 5;
-            item.useAnimation = 5;
-            item.useStyle = 5;
-            item.noMelee = true; //so the item's animation doesn't do damage
-            item.knockBack = 4;
-            item.value = 1000;
-            item.rare = 1;
-            item.UseSound = SoundID.Item11;
-            item.autoReuse = true;
-            item.shoot = mod.ProjectileType("RightLeg"); //idk why but all the guns in the vanilla source have this
-            item.shootSpeed = 16f;
-        }
-        public class RightLeg : ModProjectile
-        {
-            public override void SetStaticDefaults()
-            {
-                DisplayName.SetDefault("Joe");     //The English name of the projectile
-            }
+		public override void SetDefaults()
+		{
+			item.damage = 10;
+			item.width = 20;
+			item.height = 16;
+			item.useTime = 5;
+			item.useAnimation = 5;
+			item.useStyle = 5;
+			item.noMelee = true; //so the item's animation doesn't do damage
+			item.knockBack = 4;
+			item.value = 1000;
+			item.rare = 1;
+			item.UseSound = SoundID.Item11;
+			item.autoReuse = true;
+			item.shoot = mod.ProjectileType("RightLeg"); //idk why but all the guns in the vanilla source have this
+			item.shootSpeed = 16f;
+		}
+		public class RightLeg : ModProjectile
+		{
+			public override void SetStaticDefaults()
+			{
+				DisplayName.SetDefault("Joe");     //The English name of the projectile
+			}
 
-            public override void SetDefaults()
-            {
-                projectile.width = 14;               //The width of projectile hitbox
-                projectile.height = 14;              //The height of projectile hitbox
-                projectile.hostile = false;         //Can the projectile deal damage to the player?
-                projectile.friendly = true;
-                projectile.alpha = 0;
-                projectile.tileCollide = true;
-                projectile.timeLeft = 200;
-            }
-            public override void AI()
-            {
-                projectile.velocity *= 0.95f;
-                projectile.rotation += (projectile.rotation *= 1.25f);
-                Projectile.NewProjectile(projectile.Center, new Vector2(projectile.rotation / 1), 1, 10, 10);
-            }
-        }
-        /*
+			public override void SetDefaults()
+			{
+				projectile.width = 14;               //The width of projectile hitbox
+				projectile.height = 14;              //The height of projectile hitbox
+				projectile.hostile = false;         //Can the projectile deal damage to the player?
+				projectile.friendly = true;
+				projectile.alpha = 0;
+				projectile.tileCollide = true;
+				projectile.timeLeft = 200;
+			}
+			public override void AI()
+			{
+				projectile.velocity *= 0.95f;
+				projectile.rotation += (projectile.rotation *= 1.25f);
+				Projectile.NewProjectile(projectile.Center, new Vector2(projectile.rotation / 1), 1, 10, 10);
+			}
+		}
+		/*
          * Feel free to uncomment any of the examples below to see what they do
          */
 
-        // What if I wanted this gun to have a 38% chance not to consume ammo?
-        /*public override bool ConsumeAmmo(Player player)
+		// What if I wanted this gun to have a 38% chance not to consume ammo?
+		/*public override bool ConsumeAmmo(Player player)
         {
             return Main.rand.NextFloat() >= .38f;
         }*/
 
-        // What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
-        // Uzi/Molten Fury style: Replace normal Bullets with Highvelocity
-        /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		// What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
+		// Uzi/Molten Fury style: Replace normal Bullets with Highvelocity
+		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             if (type == ProjectileID.Bullet) // or ProjectileID.WoodenArrowFriendly
             {
@@ -75,9 +75,9 @@ namespace Heylookamod.Items
             return true; // return true to allow tmodloader to call Projectile.NewProjectile as normal
         }*/
 
-        // What if I wanted it to shoot like a shotgun?
-        // Shotgun style: Multiple Projectiles, Random spread 
-        /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		// What if I wanted it to shoot like a shotgun?
+		// Shotgun style: Multiple Projectiles, Random spread 
+		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             int numberProjectiles = 4 + Main.rand.Next(2); // 4 or 5 shots
             for (int i = 0; i < numberProjectiles; i++)
@@ -91,9 +91,9 @@ namespace Heylookamod.Items
             return false; // return false because we don't want tmodloader to shoot projectile
         }*/
 
-        // What if I wanted an inaccurate gun? (Chain Gun)
-        // Inaccurate Gun style: Single Projectile, Random spread 
-        /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		// What if I wanted an inaccurate gun? (Chain Gun)
+		// Inaccurate Gun style: Single Projectile, Random spread 
+		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(30));
             speedX = perturbedSpeed.X;
@@ -101,9 +101,9 @@ namespace Heylookamod.Items
             return true;
         }*/
 
-        // What if I wanted multiple projectiles in a even spread? (Vampire Knives) 
-        // Even Arc style: Multiple Projectile, Even Spread 
-        /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		// What if I wanted multiple projectiles in a even spread? (Vampire Knives) 
+		// Even Arc style: Multiple Projectile, Even Spread 
+		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             float numberProjectiles = 3 + Main.rand.Next(3); // 3, 4, or 5 shots
             float rotation = MathHelper.ToRadians(45);
@@ -116,15 +116,15 @@ namespace Heylookamod.Items
             return false;
         }*/
 
-        // Help, my gun isn't being held at the handle! Adjust these 2 numbers until it looks right.
-        /*public override Vector2? HoldoutOffset()
+		// Help, my gun isn't being held at the handle! Adjust these 2 numbers until it looks right.
+		/*public override Vector2? HoldoutOffset()
         {
             return new Vector2(10, 0);
         }*/
 
-        // How can I make the shots appear out of the muzzle exactly?
-        // Also, when I do this, how do I prevent shooting through tiles?
-        /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		// How can I make the shots appear out of the muzzle exactly?
+		// Also, when I do this, how do I prevent shooting through tiles?
+		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY)) * 25f;
             if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
@@ -134,9 +134,9 @@ namespace Heylookamod.Items
             return true;
         }*/
 
-        // How can I get a "Clockwork Assault Rifle" effect?
-        // 3 round burst, only consume 1 ammo for burst. Delay between bursts, use reuseDelay
-        /*	The following changes to SetDefaults()
+		// How can I get a "Clockwork Assault Rifle" effect?
+		// 3 round burst, only consume 1 ammo for burst. Delay between bursts, use reuseDelay
+		/*	The following changes to SetDefaults()
             item.useAnimation = 12;
             item.useTime = 4;
             item.reuseDelay = 14;
@@ -147,8 +147,8 @@ namespace Heylookamod.Items
             return !(player.itemAnimation < item.useAnimation - 2);
         }*/
 
-        // How can I shoot 2 different projectiles at the same time?
-        /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		// How can I shoot 2 different projectiles at the same time?
+		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             // Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
             Projectile.NewProjectile(position.X, position.Y, speedX, speedY, ProjectileID.GrenadeI, damage, knockBack, player.whoAmI);
@@ -156,12 +156,12 @@ namespace Heylookamod.Items
             return true;
         }*/
 
-        // How can I choose between several projectiles randomly?
-        /*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		// How can I choose between several projectiles randomly?
+		/*public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             // Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
             type = Main.rand.Next(new int[] { type, ProjectileID.GoldenBullet, mod.ProjectileType<Projectiles.ExampleBullet>() });
             return true;
         }*/
-    }
+	}
 }

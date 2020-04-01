@@ -8,23 +8,19 @@
     ".NETFramework,Version=v4.5": []
   },
   "packageFolders": {
-    "C:\\Users\\darkp\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\BRA0007\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darkp\\Documents\\GitHub\\Heylookamod\\Heylookamod.csproj",
+      "projectUniqueName": "C:\\Users\\BRA0007\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj",
       "projectName": "Heylookamod",
-      "projectPath": "C:\\Users\\darkp\\Documents\\GitHub\\Heylookamod\\Heylookamod.csproj",
-      "packagesPath": "C:\\Users\\darkp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darkp\\Documents\\GitHub\\Heylookamod\\obj\\",
+      "projectPath": "C:\\Users\\BRA0007\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\Heylookamod.csproj",
+      "packagesPath": "C:\\Users\\BRA0007\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\BRA0007\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Heylookamod\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\darkp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\BRA0007\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -46,7 +42,9 @@
       }
     },
     "frameworks": {
-      "net45": {}
+      "net45": {
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+      }
     }
   }
 }

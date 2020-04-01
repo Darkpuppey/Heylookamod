@@ -1,6 +1,4 @@
-﻿using System;
-using Heylookamod.Projectiles;
-using Microsoft.Xna.Framework;
+﻿using Heylookamod.Projectiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,7 +10,7 @@ namespace Heylookamod.Items.JimDrops
 	{
 		public override void SetStaticDefaults()
 		{
-            DisplayName.SetDefault("Hades' Spear");
+			DisplayName.SetDefault("Hades' Spear");
 			Tooltip.SetDefault("It may not be as powerful as the real thing, but its enough to get the job done.");
 		}
 
@@ -39,10 +37,10 @@ namespace Heylookamod.Items.JimDrops
 			item.shoot = ModContent.ProjectileType<JimSpearP>();
 		}
 
-        public override bool CanUseItem(Player player)
+		public override bool CanUseItem(Player player)
 		{
 			// Ensures no more than one spear can be thrown out, use this when using autoReuse
-			return player.ownedProjectileCounts[item.shoot] < 1; 
+			return player.ownedProjectileCounts[item.shoot] < 1;
 		}
 	}
 }

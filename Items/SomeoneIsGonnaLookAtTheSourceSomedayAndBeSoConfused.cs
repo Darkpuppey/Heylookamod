@@ -1,18 +1,19 @@
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Heylookamod.Items
 {
 	public class SomeoneIsGonnaLookAtTheSourceSomedayAndBeSoConfused : ModItem
 	{
-		public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Omega Vessel");
+		public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Omega Vessel");
 			Tooltip.SetDefault("Smells like explosives");
 		}
 
-		public override void SetDefaults() {
+		public override void SetDefaults()
+		{
 			item.damage = 100;
 			item.magic = true;
 			item.mana = 10;
@@ -30,10 +31,10 @@ namespace Heylookamod.Items
 			item.shootSpeed = 1f;
 		}
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
-            Projectile.NewProjectile(position.X + Main.rand.Next(1980) - 990, position.Y - 600, speedX, speedY, type, damage, knockBack, player.whoAmI);
-            return false;
-        }
-    }
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		{
+			Projectile.NewProjectile(position.X + Main.rand.Next(1980) - 990, position.Y - 600, speedX, speedY, type, damage, knockBack, player.whoAmI);
+			return false;
+		}
+	}
 }
