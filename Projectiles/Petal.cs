@@ -25,7 +25,7 @@ namespace Heylookamod.Projectiles
 		}
 		public override void AI()
 		{
-			BaseAI.Look(projectile, 0);
+			//BaseAI.Look(projectile, 0);
 			projectile.velocity *= 0.95f;
 			projectile.alpha += 5;
 			if (projectile.alpha >= 254)

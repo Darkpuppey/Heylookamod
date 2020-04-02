@@ -1,11 +1,22 @@
 Look, I honestly don't know what im doing. Maybe something good will come of this? We can only hope.
 Some of the content in this mod is either craftable from nothing or only accessible through CheatSheet.
 Have fun
-V4.0
--Added a new boss, Jim (Theres actual effort put into this boss I can assure you)
--New Underworld enemy, Jimothy (T r u s t  m e)
-V5.0
--Resprites for all!
--Tweaked a few things relating to Jim and his friends
--Added Vulcanite, a new ore that spawns after killing Jim
--New Icon, hope you like it!
+
+Hi im GoodPro712 and I code for Vulcan Valley
+
+~ Changelog ~
+> v0.4
+  -Added a new boss, Jim (Theres actual effort put into this boss I can assure you)
+  -New Underworld enemy, Jimothy (T r u s t  m e)
+> v0.5
+  -Resprites for all!
+  -Tweaked a few things relating to Jim and his friends
+  -Added Vulcanite, a new ore that spawns after killing Jim
+  -New Icon, hope you like it!
+> v1.0 - The Rebirth Update!
+  -Changed name to Vulcan Valley
+  -Slaved GoodPro712
+  -Changed description a bit
+  -Used visual studio's code cleaner
+  -Healthbars is 2 words darkpuppey smh
+  -Added new boss checklist woo

@@ -1,10 +1,10 @@
+using Heylookamod.NPCs.Jim;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Heylookamod.Items
 {
-	//imported from my tAPI mod because I'm lazy
 	public class JimSpawner : ModItem
 	{
 		public override void SetStaticDefaults()
@@ -30,13 +30,14 @@ namespace Heylookamod.Items
 		public override bool CanUseItem(Player player)
 		{
 			// "player.ZoneUnderworldHeight" could also be written as "player.position.Y / 16f > Main.maxTilesY - 200"
-			return NPC.downedPlantBoss && player.ZoneUnderworldHeight && !NPC.AnyNPCs(mod.NPCType("JimHead"));
+			return NPC.downedPlantBoss && player.ZoneUnderworldHeight && !NPC.AnyNPCs(ModContent.NPCType<JimHead>());
 		}
-		public int pCenterY;
+
 		public override bool UseItem(Player player)
 		{
-			pCenterY = (int)player.Center.Y;
-			NPC.NewNPC((int)player.Center.X, (pCenterY - 2500), mod.NPCType("JimHead"));
+			int pCenterY = (int)player.Center.Y;
+
+			NPC.NewNPC((int)player.Center.X, pCenterY - 2500, mod.NPCType("JimHead"));
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			Main.NewText("[c/FFA500:Jim has come to beat your ass.]");
 			Main.NewText("[c/d5ff82:Battle Theme of Jim:] XI - Solar Storm");

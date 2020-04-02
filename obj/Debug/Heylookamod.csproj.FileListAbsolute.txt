@@ -1,9 +1,0 @@
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.csprojAssemblyReference.cache
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.csproj.CoreCompileInputs.cache
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\BaseMod.dll
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Terraria.exe
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.csproj.CopyComplete
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Heylookamod.dll
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\bin\Debug\Heylookamod.pdb
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.dll
-C:\Users\darkp\Documents\My Games\Terraria\ModLoader\Mod Sources\Heylookamod\obj\Debug\Heylookamod.pdb

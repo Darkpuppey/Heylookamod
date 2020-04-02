@@ -63,7 +63,7 @@ namespace Heylookamod
 			}
 			else
 			{
-				ErrorLogger.Log("Darkpuppey you fucking idiot: Unknown loadVersion: " + loadVersion);
+				ModContent.GetInstance<Heylookamod>().Logger.Error("Darkpuppey you fucking idiot: Unknown loadVersion: " + loadVersion);
 			}
 		}
 

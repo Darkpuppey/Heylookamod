@@ -50,7 +50,7 @@ namespace Heylookamod.Projectiles
 				Main.PlaySound(SoundID.DD2_BookStaffCast);
 				Timer++;
 			}
-			BaseAI.Look(projectile, 90);
+			//BaseAI.Look(projectile, 90);
 			projectile.velocity.X = 0;
 			if (Timer <= 20)
 			{
